@@ -20,7 +20,7 @@ API in project: Api base url: `localhost:8000`
 Example: ( Using `axios` )
 
 1. Create User
-
+```javascript
 axios({
     method: 'POST',
     url: 'http://localhost:8000/api/user/create',
@@ -35,7 +35,8 @@ axios({
             "birthDay": "07/12/1999"
         }
     }
-})`
+})
+```
 
 2. Login
 
