@@ -14,7 +14,7 @@ class ProductController {
     } = req.query;
 
     let obj = {};
-    obj[`${sortBy}`] = orderBy === "DESC" ? -1 : 1;
+    obj[`${sortBy}`] = orderBy === "DESC" || orderBy === "desc" ? -1 : 1;
 
     obj = orderBy ? obj : {};
 
