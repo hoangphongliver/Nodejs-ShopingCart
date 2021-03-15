@@ -1,0 +1,709 @@
+{
+	"info": {
+		"_postman_id": "59b775a0-a334-4107-82b3-e02b1755b396",
+		"name": "NodeJS_MySQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"\",\r\n    \"password\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"\",\r\n    \"newPassword\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/changePassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"changePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQsInVzZXJuYW1lIjoicGhvbmdodEBzbWFydG9zYy5jb20iLCJpYXQiOjE2MTU1MjEzNzEsImV4cCI6MTYxNTUyMTQzMX0.ZFkQawBKsOVnufgNXbv1LrHG8nqKVyDRXJvtMYmrayk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBob25naHRAc21hcnRvc2MuY29tIiwiaWF0IjoxNjE1NTIwMDQzLCJleHAiOjE2NDcwNzc2NDN9.xzYP3-idjGda0Dkd4FCn2F_Y9mJeZTeEX0ic8bu3_jY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/refreshToken",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"refreshToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"nam@smartosc.com\",\r\n    \"password\": \"phongkop123\",\r\n    \"email\": \"name@smartosc.com\",\r\n    \"phoneNumber\": \"54545555\",\r\n    \"firstName\": \"Name\",\r\n    \"lastName\": \"Le\",\r\n    \"birthDay\": \"07/12/1999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoicGhvbmdodEBzbWFydG9zYy5jb20iLCJpYXQiOjE2MTUxODYxOTUsImV4cCI6MTYxNTE4OTc5NX0.VCFsQwrXbTpwPnUqhZcWBmf2T6o7hO1jMOtgdhl-_JY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/user/getAllUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"getAllUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoicGhvbmdodEBzbWFydG9zYy5jb20iLCJpYXQiOjE2MTUxODYxOTUsImV4cCI6MTYxNTE4OTc5NX0.VCFsQwrXbTpwPnUqhZcWBmf2T6o7hO1jMOtgdhl-_JY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/user/delete/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"delete",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 10,\r\n    \"userParams\": {\r\n        \"email\": \"name@smartosc.com\",\r\n        \"phoneNumber\": \"54545555\",\r\n        \"firstName\": \"Name\",\r\n        \"lastName\": \"Le\",\r\n        \"birthDay\": \"07/12/1999\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get ALL Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/product/getAllProducts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"getAllProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Samsung Note 10\",\r\n    \"description\": \"Samsung Note 10 ban chay !!\",\r\n    \"price\": 3000000,\r\n    \"image\": \"https://images.samsung.com/vn/smartphones/galaxy-note10/images/galaxy-note10_highlights_mobile_kv.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYsInVzZXJuYW1lIjoicGhvbmdodEBzbWFydG9zYy5jb20iLCJpYXQiOjE2MTU3OTE0NDEsImV4cCI6MTYxNTc5NTA0MX0.rXccivjo5WI_h8sfs5_q98GHmuEyoecXfjqhnAxhKcs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/product/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productParams\": {\r\n    \"name\": \"Samsung S20\",\r\n    \"description\": \"Samsung Note 10 ban chay !!\",\r\n    \"price\": 3000000,\r\n    \"image\": \"https://images.samsung.com/vn/smartphones/galaxy-note10/images/galaxy-note10_highlights_mobile_kv.jpg\"\r\n    },\r\n    \"productId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/product/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detele Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/product/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product In Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/product/getProductInCategory/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"getProductInCategory",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Add to Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"12\",\r\n    \"productId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/cart/createCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cart",
+								"createCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cart of User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product In Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTksInVzZXJuYW1lIjoicGhvbmdodEBnbWFpbC5jb20iLCJpYXQiOjE2MTU0NDM0MjQsImV4cCI6MTYxNTQ0NzAyNH0.Nu7NWAG5C39LsolP7LIz7spirjwo4miFfeCvttShbTo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/cart/delete/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cart",
+								"delete",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTksInVzZXJuYW1lIjoicGhvbmdodEBnbWFpbC5jb20iLCJpYXQiOjE2MTU0NTAzNzksImV4cCI6MTYxNTQ1Mzk3OX0.xp_vEcs6JpE1crMeSunn0vrRqZRumudWTwjgkZwJvDU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cartItemId\": 67,\r\n     \"action\": \"minus\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/cart/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cart",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detele All",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/cart/deleteAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cart",
+								"deleteAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get All Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTksInVzZXJuYW1lIjoicGhvbmdodEBnbWFpbC5jb20iLCJpYXQiOjE2MTU0NTQ3MzUsImV4cCI6MTYxNTQ1ODMzNX0.vIrZNrVfCBVRh--kbKI-yUAk7o-WtaNTEPqpVDsPadI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYsInVzZXJuYW1lIjoicGhvbmdodEBzbWFydG9zYy5jb20iLCJpYXQiOjE2MTU3OTE0NDEsImV4cCI6MTYxNTc5NTA0MX0.rXccivjo5WI_h8sfs5_q98GHmuEyoecXfjqhnAxhKcs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/category/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYsInVzZXJuYW1lIjoicGhvbmdodEBzbWFydG9zYy5jb20iLCJpYXQiOjE2MTU3OTUwOTAsImV4cCI6MTYxNTc5ODY5MH0.otuwHMugBc7ug7BKl1Nb3i_ienqtmVs1LUtrOnX7WC4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"LG\",\r\n    \"description\": \"LG smart phone\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/category/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjYsInVzZXJuYW1lIjoicGhvbmdodEBzbWFydG9zYy5jb20iLCJpYXQiOjE2MTU3OTUwOTAsImV4cCI6MTYxNTc5ODY5MH0.otuwHMugBc7ug7BKl1Nb3i_ienqtmVs1LUtrOnX7WC4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\":\"6\",\r\n    \"categoryParams\": {\r\n        \"name\": \"LG - V30\",\r\n        \"description\": \"LG smart phone\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/category/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/category/delete/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"category",
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
