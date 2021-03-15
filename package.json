@@ -1,0 +1,30 @@
+{
+   "name": "smart-shop",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "devDependencies": {
+      "@types/express": "^4.17.11",
+      "@types/morgan": "^1.9.2",
+      "@types/node": "^14.14.31",
+      "morgan": "^1.10.0",
+      "ts-node": "^9.1.1",
+      "typescript": "^4.2.2"
+   },
+   "dependencies": {
+      "bcryptjs": "^2.4.3",
+      "body-parser": "^1.19.0",
+      "class-validator": "^0.13.1",
+      "cors": "^2.8.5",
+      "dayjs": "^1.10.4",
+      "dotenv": "^8.2.0",
+      "express": "^4.17.1",
+      "jsonwebtoken": "^8.5.1",
+      "mysql": "^2.18.1",
+      "nodemon": "^2.0.7",
+      "reflect-metadata": "^0.1.13",
+      "typeorm": "^0.2.31"
+   },
+   "scripts": {
+      "start": "nodemon src/server.ts"
+   }
+}
