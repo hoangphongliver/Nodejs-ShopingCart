@@ -8,7 +8,7 @@ Steps to run this project:
 4. Run `npm start` command
 
 
-API in project: Api base url: localhost:8000
+API in project: Api base url: `localhost:8000`
 
 
 1. Import postman collection to Postman app ( postman colection name: NodeJS_MySQL.postman_collection ,  same folder with readme.md )
@@ -17,7 +17,7 @@ API in project: Api base url: localhost:8000
 4. Get access token and add to Authorization ( type Bearer )
 
 
-Example: ( Using axios )
+Example: ( Using `axios` )
 
 1. Create User
 
@@ -35,10 +35,11 @@ axios({
             "birthDay": "07/12/1999"
         }
     }
-})
+})`
 
 2. Login
 
+```javascript
 axios({
     method: 'POST',
     url: "http://localhost:8000/api/auth/login",
@@ -49,17 +50,20 @@ axios({
         }
     }
 })
+```
 
 3. Get Products
-
+```javascript
 axios({
     method: 'GET',
     url: "http://localhost:8000/api/product/getAllProducts",
 })
+```
 
 4. Get Products, Category with Params ( sortBy , itemPerPage , pageIndex , orderBy: DESC or ASC , searchPhase )
-
+```javascript
 axios({
     method: 'GET',
     url: "http://localhost:8000/api/product/getAllProducts?sortBy=name&itemPerPage=5&pageIndex=0&orderBy=DESC&searchPhase=noki",
 })
+```
